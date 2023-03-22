@@ -41,6 +41,6 @@ public class CircleDecorator implements Image {
 
     @Override
     public int getNumLayers() {
-        return 2;
+        return 1;
     }
 }

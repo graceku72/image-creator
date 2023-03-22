@@ -21,7 +21,7 @@ public class SquareDecorator implements Image {
 
     @Override
     public Color getPixelColor(int x, int y) {
-        if (x < squareX || x > squareX + squareSize || y < squareY || y > squareY + squareSize) {
+        if (x < squareX || x > squareX + squareSize || y > squareY || y < squareY + squareSize) {
             return image.getPixelColor(x, y);
         }
         return color;
@@ -39,6 +39,6 @@ public class SquareDecorator implements Image {
 
     @Override
     public int getNumLayers() {
-        return 2;
+        return 1;
     }
 }
