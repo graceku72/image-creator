@@ -12,7 +12,11 @@ public class Main {
    */
   public static Image makeImage() throws IOException {
     // TODO use this method for testing your decorators
-    return null;
+//    Color greenish = new Color(0, 255, 52);
+//    SolidColorImage solidColorImage = new SolidColorImage(200, 200, greenish);
+//    return solidColorImage;
+    PictureImage pictureImage = new PictureImage("img/kmp.jpg");
+    return pictureImage;
   }
 
   /**
