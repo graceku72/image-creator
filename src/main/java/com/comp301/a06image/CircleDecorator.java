@@ -11,7 +11,7 @@ public class CircleDecorator implements Image {
     private int radius;
     private Color color;
     public CircleDecorator(Image image, int cx, int cy, int radius, Color color) {
-        if (radius <= 0) {
+        if (radius < 0) {
             throw new IllegalArgumentException();
         }
         this.image = image;
@@ -31,12 +31,12 @@ public class CircleDecorator implements Image {
 
     @Override
     public int getWidth() {
-        return image.getWidth();
+        return radius * 2;
     }
 
     @Override
     public int getHeight() {
-        return image.getHeight();
+        return radius * 2;
     }
 
     @Override
