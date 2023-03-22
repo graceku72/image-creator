@@ -12,12 +12,12 @@ public class CircleDecorator implements Image {
   private final Color color;
 
   public CircleDecorator(Image image, int cx, int cy, int radius, Color color) {
-    if (radius <= 0) {
+    if (radius < 0) {
       throw new IllegalArgumentException();
     }
     this.image = image;
-    this.cx = cx;
-    this.cy = cy;
+    this.cx = radius;
+    this.cy = radius;
     this.radius = radius;
     this.color = color;
   }
