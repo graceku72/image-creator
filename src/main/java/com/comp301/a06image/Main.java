@@ -27,8 +27,8 @@ public class Main {
     ZoomDecorator zoom = new ZoomDecorator(img);
     return img;
 
-    PictureImage finalImg = new PictureImage("img/jedi.png");
-    return finalImg;
+//    PictureImage finalImg = new PictureImage("img/jedi.png");
+//    return finalImg;
   }
 
   /**
