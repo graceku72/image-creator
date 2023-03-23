@@ -21,6 +21,7 @@ public class ZoomDecorator implements Image {
     public Color getPixelColor(int x, int y) {
         //if x within original img width
         //if y within original img height
+        return null;
     }
 
     @Override
