@@ -20,10 +20,13 @@ public class BorderDecorator implements Image {
         if (x < 0 || x >= this.getWidth() || y < 0 || y >= this.getHeight()) {
             throw new IllegalArgumentException();
         }
-        if (x < this.getWidth() && x >= this.getWidth() - thiccness && y < this.getHeight() && y >= this.getHeight() - thiccness) {
+        if (x < this.getWidth() && x >= this.getWidth() - thiccness) {
             return borderColor;
         }
-        Color imgColor = image.getPixelColor(x, y);
+        if (y < this.getHeight() && y >= this.getHeight() - thiccness) {
+            return borderColor;
+        }
+        Color imgColor = image.getPixelColor(x - thiccness, y - thiccness);
         return imgColor;
     }
 
