@@ -19,13 +19,10 @@ public class ZoomDecorator implements Image {
 
     @Override
     public Color getPixelColor(int x, int y) {
-        if (x < 0 || x >= this.getWidth()) {
+        if (x < 0 || x >= this.getWidth() || y < 0 || y >= this.getHeight()) {
             throw new IllegalArgumentException();
         }
-        if (y < 0 || y >= this.getHeight()) {
-            throw new IllegalArgumentException();
-        }
-        Color originalColor = image.getPixelColor((int) Math.floor((double) x / multiplier), (int) Math.floor((double) y / multiplier));
+        Color originalColor = image.getPixelColor((int) Math.floor(x / multiplier), (int) Math.floor(y / multiplier));
         return originalColor;
     }
 
