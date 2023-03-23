@@ -15,8 +15,20 @@ public class Main {
 //    Color greenish = new Color(0, 255, 52);
 //    SolidColorImage solidColorImage = new SolidColorImage(200, 200, greenish);
 //    return solidColorImage;
-    PictureImage pictureImage = new PictureImage("img/kmp.jpg");
-    return pictureImage;
+    PictureImage img = new PictureImage("img/kmp.jpg");
+    Color red = new Color(255, 0, 0);
+    BorderDecorator redBorder = new BorderDecorator(img, 5, red);
+    Color blue = new Color(0, 0, 255);
+    BorderDecorator blueBorder = new BorderDecorator(img, 50, blue);
+    Color yellow = new Color(255, 255, 0);
+    CircleDecorator circle = new CircleDecorator(img, 50, 50, 40, yellow);
+    Color orange = new Color(200, 80, 10);
+    SquareDecorator square = new SquareDecorator(img, 100, 100, 40, orange);
+    ZoomDecorator zoom = new ZoomDecorator(img);
+    return img;
+
+    PictureImage finalImg = new PictureImage("img/jedi.png");
+    return finalImg;
   }
 
   /**
