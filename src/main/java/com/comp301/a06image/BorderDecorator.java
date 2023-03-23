@@ -17,9 +17,11 @@ public class BorderDecorator implements Image {
 
     @Override
     public Color getPixelColor(int x, int y) {
-        //if coordinate is within border, return borderColor
-        // else return image color
-        return null;
+        if (x < 0 || x >= this.getWidth() || y < 0 || y >= this.getHeight()) {
+            throw new IllegalArgumentException();
+        }
+        Color color = image.getPixelColor(x - thiccness, y - thiccness);
+        return color;
     }
 
     @Override
