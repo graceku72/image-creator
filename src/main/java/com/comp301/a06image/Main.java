@@ -1,8 +1,9 @@
 package com.comp301.a06image;
 
-import java.awt.Color;
-import java.io.IOException;
 import javafx.application.Application;
+
+import java.awt.*;
+import java.io.IOException;
 
 public class Main {
   /**
@@ -12,23 +13,24 @@ public class Main {
    */
   public static Image makeImage() throws IOException {
     // TODO use this method for testing your decorators
-//    Color greenish = new Color(0, 255, 52);
-//    SolidColorImage solidColorImage = new SolidColorImage(200, 200, greenish);
-//    return solidColorImage;
+    //    Color greenish = new Color(0, 255, 52);
+    //    SolidColorImage solidColorImage = new SolidColorImage(200, 200, greenish);
+    //    return solidColorImage;
+
     PictureImage img = new PictureImage("img/kmp.jpg");
     Color red = new Color(255, 0, 0);
     BorderDecorator redBorder = new BorderDecorator(img, 5, red);
     Color blue = new Color(0, 0, 255);
-    BorderDecorator blueBorder = new BorderDecorator(img, 50, blue);
+    BorderDecorator blueBorder = new BorderDecorator(redBorder, 50, blue);
     Color yellow = new Color(255, 255, 0);
-    CircleDecorator circle = new CircleDecorator(img, 50, 50, 40, yellow);
+    CircleDecorator circle = new CircleDecorator(blueBorder, 50, 50, 40, yellow);
     Color orange = new Color(200, 80, 10);
-    SquareDecorator square = new SquareDecorator(img, 100, 100, 40, orange);
-    ZoomDecorator zoom = new ZoomDecorator(img);
-    return img;
+    SquareDecorator square = new SquareDecorator(circle, 100, 100, 40, orange);
+    ZoomDecorator zoom = new ZoomDecorator(square);
+    return zoom;
 
-//    PictureImage finalImg = new PictureImage("img/jedi.png");
-//    return finalImg;
+    //    PictureImage finalImg = new PictureImage("img/jedi.png");
+    //    return finalImg;
   }
 
   /**
