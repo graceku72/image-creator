@@ -21,9 +21,9 @@ public class ZoomDecorator implements Image {
     public Color getPixelColor(int x, int y) {
         if (x < 0 || x >= this.getWidth() || y < 0 || y >= this.getHeight()) {
             throw new IllegalArgumentException();
+        } else {
+            return image.getPixelColor(Math.round(x / multiplier), Math.round(y / multiplier));
         }
-        Color originalColor = image.getPixelColor(Math.round(x / multiplier), Math.round(y / multiplier));
-        return originalColor;
     }
 
     @Override
